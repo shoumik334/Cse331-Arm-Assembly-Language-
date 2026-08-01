@@ -1,0 +1,14 @@
+Write a program that subtracts 77 (hex) from 19 (decimal) using only immediate ADD/SUB style
+instructions. Explain the result using the CPSR flags if the result is negative.
+
+Sol:
+
+
+.global _start
+_start:
+	
+	mov r0,#19
+	mov r1,#0x77
+	
+	sub r2,r0,r1
+	
