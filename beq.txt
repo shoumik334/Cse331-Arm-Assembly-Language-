@@ -1,0 +1,15 @@
+.global _start
+_start:
+	
+	mov r0,#5
+	mov r1,#4
+	
+	cmp r0,r1
+	beq equal
+	
+	mov r3,#0
+	b end
+	
+	equal:
+	mov r3,#5
+	.end

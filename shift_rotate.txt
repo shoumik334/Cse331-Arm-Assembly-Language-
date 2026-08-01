@@ -1,0 +1,10 @@
+.global _start
+_start:
+	mov r0,#50
+	
+	lsl r1,r0,#2
+	
+	lsr r2,r0,#1
+	
+	ror r3,r0,#4
+	
