@@ -1,0 +1,26 @@
+Define a variable named 'Sec_1' and initialize with the value '7' (hex). Define another variable named 'CSE331L' 
+and initialize with the value '12' (dec). Multiply these variables using general-purpose registers. Store the 
+multiplied value in a new variable named 'Cp2'. Give an explanation based on Memory segments.
+
+soln:
+
+
+.data
+Sec_1: .word 0x7
+CSE331L: .word 12
+Cp2: .word 0
+
+.text
+.global _start
+_start:
+	ldr r0,=Sec_1
+	ldr r1,[r0]
+	
+	ldr r0,=CSE331L
+	ldr r2,[r0]
+	
+	mul r3,r1,r2
+	
+	ldr r0,=Cp2
+	str r3,[r0]
+	
