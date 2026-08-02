@@ -1,0 +1,31 @@
+1. Suppose, you have a loop like the following in C. Can you translate this code into arm assembly?
+for(int i = 0; i < 5; i++)
+{
+a = a + 5;
+b = b + 7;
+}
+
+Sol:
+.global _start
+_start:
+	
+	mov r0,#0
+	mov r1,#0
+	mov r2,#0
+	
+	loop:
+	cmp r0,#5
+	
+	beq end_loop
+	
+	add r1,r1,#5
+	add r2,r2,#7
+	
+	add r0,r0,#1
+	
+	b loop
+	
+	end_loop:
+	
+	
+	

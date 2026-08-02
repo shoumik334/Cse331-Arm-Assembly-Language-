@@ -1,0 +1,25 @@
+Suppose, you have a conditional statement in C language. Can you translate this code into arm
+assembly?
+if( a > 5)
+{ sum = sum + 1; }
+else { sum = sum * 3);
+
+soln:
+
+
+.global _start
+
+_start:
+
+    CMP r0, #5       @ compare a with 5
+    BLE else_part    @ if a <= 5 go to else
+
+if_part:
+    ADD r1, r1, #1   @ sum = sum + 1
+    B end_if
+
+else_part:
+    MOV r2, #3
+    MUL r1, r1, r2   @ sum = sum * 3
+
+end_if:
