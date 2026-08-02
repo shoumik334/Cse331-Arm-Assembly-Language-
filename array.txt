@@ -1,0 +1,18 @@
+
+Declaring an array in assembly
+
+
+
+.global _start
+
+.data
+list1: .word 1,2,3,4,5
+
+.text
+_start:
+	ldr r0,=list1
+	loop1:
+	ldr r1,[r0]
+	add r0,r0,#4
+	b loop1
+	

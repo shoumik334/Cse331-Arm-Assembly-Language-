@@ -1,0 +1,25 @@
+.equ LED_ADDR,0xFF200000
+
+.global _start
+_start:
+
+mov r1,#1
+
+loop:
+	ldr r0,=LED_ADDR
+	STR r1,[r0]
+	
+	add r1,r1,#1
+	cmp r1,#16
+	beq reset_counter
+	
+	b loop
+	
+	reset_counter:
+	mov r1,#1
+	b loop
+	
+	done :
+	b done
+	
+	
